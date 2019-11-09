@@ -1,0 +1,28 @@
+{
+  "name": "site-tat",
+  "version": "0.0.0",
+  "description": "Website for \"Tutorat Associatif Toulousain\"",
+  "main": "index.js",
+  "repository": "https://github.com/codeanonorg/site-tat.git",
+  "author": "Nathan Graule <solarliner@gmail.com>",
+  "license": "N/A",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "private": true,
+  "dependencies": {
+    "next": "^9.1.3",
+    "next-preactx-plugin": "^1.1.3",
+    "preact": "^10.0.4",
+    "preact-render-to-string": "^5.1.1",
+    "preact-ssr-prepass": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "typescript": "^3.7.2"
+  }
+}
