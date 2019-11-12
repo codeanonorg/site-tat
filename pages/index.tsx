@@ -1,22 +1,21 @@
-import url from "url";
-import qs from "querystring";
-import Axios from "../axios";
-import { NextPageContext } from "next";
+import React from "react";
+import { Container, Toolbar, Button, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 
-interface Props {
-	name: string;
-}
-export default function Home({ name }: Props) {
-	return <div>Bienvenue {name}!</div>;
-}
+const useStyles = makeStyles({
+  toolbar: {},
+  toolbarTitle: {}
+});
 
-Home.getInitialProps = async ({ req }: NextPageContext) => {
-	let name = "john";
-	if (req && req.url) {
-		const parsed = url.parse(req.url, true);
-		console.log("request url", req.url, parsed);
-		name = parsed.query.name || name;
-	}
-	const { data } = await Axios.get<{ name: string }>("/api/" + name);
-	return data;
+export default function Home() {
+  const styles = useStyles();
+  return (
+    <Container maxWidth="lg">
+      <Toolbar className={styles.toolbar}>
+        <Typography component="h2" variant="h5" color="inherit" align="center" noWrap className={styles.toolbarTitle}>
+          TAT
+        </Typography>
+      </Toolbar>
+    </Container>
+  );
 }

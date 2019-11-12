@@ -15,6 +15,7 @@
     "noImplicitThis": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "sourceMap": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
