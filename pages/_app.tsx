@@ -1,26 +1,31 @@
 import React from "react";
 import App from "next/app";
-import { ThemeProvider } from "@material-ui/styles";
+import Head from "next/head";
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../theme";
-import { CssBaseline } from "@material-ui/core";
-import { Head } from "next/document";
 
 export default class MyApp extends App {
   componentDidMount() {
-    const styles = document.querySelector("#jss-server-side");
-    if (styles && styles.parentElement) styles.parentElement.removeChild(styles);
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector("#jss-server-side");
+    if (jssStyles && jssStyles.parentElement) {
+      jssStyles.parentElement.removeChild(jssStyles);
+    }
   }
 
   render() {
     const { Component, pageProps } = this.props;
+
     return (
       <React.Fragment>
         <Head>
           <title>Tutorat Associatif Toulousain</title>
         </Head>
         <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Component {...pageProps}></Component>
+          <Component {...pageProps} />
         </ThemeProvider>
       </React.Fragment>
     );
