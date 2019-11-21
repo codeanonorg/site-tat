@@ -25,6 +25,7 @@
     "preact-ssr-prepass": "^1.0.0"
   },
   "devDependencies": {
+    "@types/node": "^12.12.11",
     "@types/react": "^16.9.11",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
